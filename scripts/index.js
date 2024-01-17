@@ -33,7 +33,7 @@ const validateForm = e => {
     // VALIDACIONES
     // Validar nombre (campo obligatorio y formato):
     name.value.trim().length === 0 && errorList.push('El nombre es un campo obligatorio');
-    !/^[A-Z][a-z]*$/.test(name.value.trim()) && errorList.push('El nombre no tiene caracteres válidos');
+    !/^[A-Z][a-z]*$/.test(name.value.trim()) && errorList.push('El nombre debe comenzar por una letra mayúscula y no contener números');
     // Validar correo:
     email.value.trim().length === 0 && errorList.push('El correo es un campo obligatorio');
     !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email.value.trim()) && errorList.push('Introduce un correo electrónico válido');
