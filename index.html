@@ -16,7 +16,8 @@
 
     <main class="form-container">
         <section class="icons">
-
+            <p></p>
+            <p></p>
         </section>
         <form action="submitForm.html" method="get" id="contact-form" class="contact-form">
             <label for="name"></label>
@@ -24,19 +25,19 @@
             <label for="email"></label>
             <input type="text" id="email" name="email" placeholder="Correo electrónico">
             <div class="option-container">
-            <input type="radio" name="info" id="info" selected="selected">
+            <input type="radio" name="info" id="info1" checked>
             <label for="">Solicitud de información adicional</label>
             </div>
             <div class="option-container">
-            <input type="radio" name="info" id="booking">
-            <label for="">Reserva de ruta</label>
+            <input type="radio" name="info" id="info2">
+            <label for="">Reserva de mesa</label>
             </div>
             <button id="info-btn" class="info-btn">Info</button>
             <textarea name="message" id="message" cols="30" rows="10" placeholder="Mensaje"></textarea>
         
             <button id="submit-btn" type="submit" class="submit-btn">Enviar</button>
 
-            <ul id="errors"></ul>
+            <ul id="errors" class="error-list"></ul>
         </form>
     </main>
 

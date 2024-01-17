@@ -5,6 +5,8 @@ const message = document.getElementById('message');
 const infoBtn = document.getElementById('info-btn');
 const submitBtn = document.getElementById('submit-btn');
 const errors = document.getElementById('errors');
+const info1 = document.getElementById('info1');
+const info2 = document.getElementById('info2');
 
 let errorList = [];
 
@@ -36,10 +38,8 @@ const validateForm = e => {
 }
 
 const showInfo = () => {
-    infoRadio.forEach(info =>
-        info.checked ? alert('¿Desea recibir información adicional?') : null
-    )
-
+    info1.checked && alert('¿Desea información adicional?')
+    info2.checked && alert('¿Desea reservar una mesa?');
 }
 
 infoBtn.addEventListener('click', showInfo);
