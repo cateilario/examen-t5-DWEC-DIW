@@ -20,7 +20,7 @@ let errorList = [];
 
 const showInfo = (e) => {
     e.preventDefault();
-    info1.checked && alert('¿Desea información adicional?')
+    info1.checked && alert('¿Desea información adicional?');
     info2.checked && alert('¿Desea reservar una mesa?');
 }
 
