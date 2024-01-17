@@ -1,3 +1,8 @@
+/**
+ * author: Caterina Ilario Paz
+ * github: https://github.com/cateilario/examen-t5-DWEC-DIW.git
+ */
+
 const myForm = document.getElementById('contact-form');
 const name = document.getElementById('name');
 const email = document.getElementById('email');
