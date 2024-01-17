@@ -1,53 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @font-face {
     font-family: 'Raleway';
     src: url(/assets/fonts/Raleway-Light.ttf) format('truetype');
@@ -122,6 +72,23 @@ body{
     text-transform: uppercase;
 }
 
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: -4em 0 4em 0;
+}
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--main-text-color);
+    margin:auto;
+    width: 45%;
+    margin-top: 2em;
+    }
 .form-container{
     display: flex;
     flex-direction: column;
@@ -215,4 +182,4 @@ button{
     padding: .7rem .9rem;
     margin-bottom: 1em;
     background-color: #88694439;
-}
+} */

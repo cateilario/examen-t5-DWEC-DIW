@@ -1,42 +1,52 @@
 const myForm = document.getElementById('contact-form');
 const name = document.getElementById('name');
 const email = document.getElementById('email');
-// const info = document.getElementById('info');
+const message = document.getElementById('message');
 const infoBtn = document.getElementById('info-btn');
 const submitBtn = document.getElementById('submit-btn');
 const errors = document.getElementById('errors');
 
 let errorList = [];
 
-const showInfo = () => {
-    info.forEach(info =>
-        info.checked ? alert('¿Desea que se realice la reserva?') : null
-    )
-}
+// Funciones
+const validateForm = e => {
 
-const validateForm = e =>{
     e.preventDefault();
-
     errorList = [];
 
-    // Validaciones
-    // Validar nombre:
-    name.value.trim() === 0 && errorList.push('El nombre no puede estar vacío');
-    !/^[a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/.test(name.value.trim()) && errorList.push('El nombre debe tener caracteres válidos.')
-    // Validar email:
-    email.value.trim() === 0 && errorList.push('El email no puede estar vacío')
-    !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email.value.trim()) && errorList.push('El email no es válido');
+    // Validar nombre (campo obligatorio y formato):
+    name.value.trim().length === 0 && errorList.push('El nombre es un campo obligatorio');
+    !/^[a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/.test(name.value.trim()) && errorList.push('El nombre no tiene caracteres válidos');
+    // Validar correo:
+    !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email.value.trim()) && errorList.push('Introduce un correo electrónico válido');
+    // Validar mensaje
+    message.value.trim().length < 10 && errorList.push('Mensaje demasiado corto');
 
-    if(errorList.length === 0 && confirm('¿Desea enviar el formulario?')){
+    // Envío formulario
+    if(errorList.length === 0 && confirm("¿Desea enviar el formulario?")){
         myForm.submit();
         myForm.reset();
-    } else if (errorList > 0){
-        errors.forEach(error => {
-            errorList.innerHTML += `<li>${error}</li>`;
+    } else if(errorList.length > 0){
+        errors.textContent = "";
+        console.log(errorList);
+        errorList.forEach(error => {
+            errors.innerHTML += `<li>${error}</li>`;
         });
     }
 }
 
+const showInfo = () => {
+    infoRadio.forEach(info =>
+        info.checked ? alert('¿Desea recibir información adicional?') : null
+    )
+
+    
+}
+
 infoBtn.addEventListener('click', showInfo);
-myForm.addEventListener('submit', validateForm)
+myForm.addEventListener('submit', validateForm);
+
+    
+
+
 
