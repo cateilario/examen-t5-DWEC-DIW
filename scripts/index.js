@@ -11,6 +11,14 @@ const info2 = document.getElementById('info2');
 let errorList = [];
 
 // Funciones
+
+const showInfo = () => {
+    info1.checked && alert('¿Desea información adicional?')
+    info2.checked && alert('¿Desea reservar una mesa?');
+}
+
+infoBtn.addEventListener('click', showInfo);
+
 const validateForm = e => {
 
     e.preventDefault();
@@ -37,12 +45,7 @@ const validateForm = e => {
     }
 }
 
-const showInfo = () => {
-    info1.checked && alert('¿Desea información adicional?')
-    info2.checked && alert('¿Desea reservar una mesa?');
-}
 
-infoBtn.addEventListener('click', showInfo);
 myForm.addEventListener('submit', validateForm);
 
     
