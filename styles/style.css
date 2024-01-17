@@ -11,6 +11,7 @@
     --height-hero-image: 75vh;
     --svg-width: 35px;
     --svg-height: 35px;
+    --error-font-size: .85rem;
 }
 
 @media screen and (max-width: 1024px){
@@ -22,6 +23,7 @@
         --height-hero-image: 70vh;
         --svg-width: 30px;
         --svg-height: 30px;
+        --error-font-size: .8rem;
     }
 }
 
@@ -138,14 +140,13 @@ select:focus{
 }
 
 input[type=radio]{
-    font-size: .8rem;
-    width: 25px;
+    width: 20px;
     border:none;
     margin-right: 1em;
 }
 
 .option-container label{
-    font-size: .8rem;
+    font-size: .9rem;
 }
 
 button{
@@ -170,7 +171,7 @@ button:hover{
 .error-list{
     list-style: none;
     text-align: center;
-    font-size: .85rem;
+    font-size: var(--error-font-size);
     margin: 1em 0 1em 0;
 }
 
@@ -187,6 +188,7 @@ button:hover{
     color: var(--main-text-color);
     background-color: #88694439;
     width: 40%;
+    min-width: 40%;
     margin: auto;
     text-align: center;
 }

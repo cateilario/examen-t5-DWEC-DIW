@@ -8,6 +8,7 @@ const errors = document.getElementById('errors');
 const info1 = document.getElementById('info1');
 const info2 = document.getElementById('info2');
 
+// Inicializar array vacío
 let errorList = [];
 
 // Funciones
@@ -17,20 +18,21 @@ const showInfo = () => {
     info2.checked && alert('¿Desea reservar una mesa?');
 }
 
-infoBtn.addEventListener('click', showInfo);
-
 const validateForm = e => {
-
+    // Evitar envío formulario
     e.preventDefault();
+    // Volver a vaciar el array de errores
     errorList = [];
 
+    // VALIDACIONES
     // Validar nombre (campo obligatorio y formato):
     name.value.trim().length === 0 && errorList.push('El nombre es un campo obligatorio');
-    !/^[a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/.test(name.value.trim()) && errorList.push('El nombre no tiene caracteres válidos');
+    !/^[A-Z][a-z]*$/.test(name.value.trim()) && errorList.push('El nombre no tiene caracteres válidos');
     // Validar correo:
+    email.value.trim().length === 0 && errorList.push('El correo es un campo obligatorio');
     !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email.value.trim()) && errorList.push('Introduce un correo electrónico válido');
     // Validar mensaje
-    message.value.trim().length < 10 && errorList.push('Mensaje demasiado corto');
+    message.value.trim().length < 10 && errorList.push('Mensaje ausente o demasiado corto');
 
     // Envío formulario
     if(errorList.length === 0 && confirm("¿Desea enviar el formulario?")){
@@ -45,8 +47,9 @@ const validateForm = e => {
     }
 }
 
-
+infoBtn.addEventListener('click', showInfo);
 myForm.addEventListener('submit', validateForm);
+
 
     
 
