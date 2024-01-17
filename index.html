@@ -23,14 +23,18 @@
             <input type="text" id="name" name="name" placeholder="Nombre">
             <label for="email"></label>
             <input type="text" id="email" name="email" placeholder="Correo electrónico">
+            <div class="option-container">
             <input type="radio" name="info" id="info" selected="selected">
             <label for="">Solicitud de información adicional</label>
+            </div>
+            <div class="option-container">
             <input type="radio" name="info" id="booking">
             <label for="">Reserva de ruta</label>
-            <button id="info-btn">Info</button>
+            </div>
+            <button id="info-btn" class="info-btn">Info</button>
             <textarea name="message" id="message" cols="30" rows="10" placeholder="Mensaje"></textarea>
         
-            <button id="submit-btn" type="submit">Enviar</button>
+            <button id="submit-btn" type="submit" class="submit-btn">Enviar</button>
 
             <ul id="errors"></ul>
         </form>

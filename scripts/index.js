@@ -40,7 +40,6 @@ const showInfo = () => {
         info.checked ? alert('¿Desea recibir información adicional?') : null
     )
 
-    
 }
 
 infoBtn.addEventListener('click', showInfo);
